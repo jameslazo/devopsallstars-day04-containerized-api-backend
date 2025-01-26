@@ -24,10 +24,12 @@ The managed nodes you connect to must also allow HTTPS (port 443) outbound traff
 - AWS CLI > 1.16.12
 
 ## [Verify or add instance permissions for Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started-instance-profile.html)
-Set up [instance profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-instanceprofile.html) OR [`AmazonSSMManagedEC2InstanceDefaultPolicy`](https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-default-host-management-configuration.html)
+Set up [instance profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-instanceprofile.html) 
+OR [`AmazonSSMManagedEC2InstanceDefaultPolicy`](https://docs.aws.amazon.com/systems-manager/latest/userguide/fleet-manager-default-host-management-configuration.html)
 
 ## [Add Session Manager permissions to an existing IAM role](https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-add-permissions-to-existing-profile.html)
-By adding permissions to an existing role, you can enhance the security of your computing environment without having to use the AWS `AmazonSSMManagedInstanceCore` policy for instance permissions.
+By adding permissions to an existing role, you can enhance the security of your computing environment without having to use the 
+AWS `AmazonSSMManagedInstanceCore` policy for instance permissions.
 
 **Create inline policy**
 ```
