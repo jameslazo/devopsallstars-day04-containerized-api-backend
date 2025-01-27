@@ -4,8 +4,7 @@
 *
 !.gitignore
 !app.py
-!{Docker,Make}file
+!Dockerfile
+!Makefile
 !requirements.txt
 !*.md
-!tf/
-!**/{main,vars,outputs}.tf
