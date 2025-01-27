@@ -64,4 +64,3 @@ AWS `AmazonSSMManagedInstanceCore` policy for instance permissions.
 }
 ```
 *Remove last permission if not using AWS KMS encryption for session data*
-
