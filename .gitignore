@@ -2,9 +2,9 @@
 #\GIT\IGNORE\#
 #\\\\\\\\\\\\#
 *
+!*/
 !.gitignore
-!app.py
+!app/*
 !Dockerfile
 !Makefile
-!requirements.txt
 !*.md
