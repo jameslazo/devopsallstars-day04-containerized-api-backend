@@ -1,0 +1,28 @@
+on: [push, workflow_dispatch]
+jobs:
+  aws_cdk:
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Configure AWS credentials from repo
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.ROLE_ARN }}  
+          aws-region: us-east-1
+          role-session-name: GitHubActionSession
+      - name: Login to AWS ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-publish
+        env: 
+          ECR_NAME: ${{ secrets.ECR_NAME }}
+          ECR_REPO_URI: ${{ secrets.ECR_REPO_URI }}
+        run: |
+          docker build --build-arg SPORTS_API_KEY=${{ secrets.SPORTS_API_KEY }} -t $ECR_NAME:latest .
+          docker tag $ECR_NAME:latest $ECR_REPO_URI:latest
+          docker push $ECR_REPO_URI:latest
