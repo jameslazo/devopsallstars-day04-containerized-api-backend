@@ -1,5 +1,8 @@
 FROM python:3.9-slim
 
+ARG SPORTS_API_KEY
+ENV SPORTS_API_KEY=$SPORTS_API_KEY
+
 # Create non-root user
 RUN useradd -m -s /bin/bash sp-api-user
 
